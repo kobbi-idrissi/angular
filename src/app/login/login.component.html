@@ -1,0 +1,128 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="form-body" style="text-align: center">
+  <div class="row">
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+                  <h3>Personal information</h3>
+                  <!--p>Fill in the data below.</p-->
+                  <form class="requires-validation" novalidate autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+
+                      <div class="col-md-12">
+                         <input [(ngModel)]="firstName" class="form-control" type="text" name="firstName" placeholder="FirstName" required>
+                         <div class="valid-feedback">Username field is valid!</div>
+                         <div class="invalid-feedback">Username field cannot be blank!</div>
+                      </div>
+
+                      <div class="col-md-12">
+                          <input [(ngModel)]="lastName" class="form-control" type="text" name="lastName" placeholder="LastName" required>
+                           <div class="valid-feedback">Email field is valid!</div>
+                           <div class="invalid-feedback">Email field cannot be blank!</div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <input [(ngModel)]="address"class="form-control" type="text" name="address" placeholder="Address" required>
+                         <div class="valid-feedback">Email field is valid!</div>
+                         <div class="invalid-feedback">Email field cannot be blank!</div>
+                    </div>
+
+
+                     <div class="col-md-12">
+                        <input [(ngModel)]="cin" class="form-control" type="text" name="cin" placeholder="cin" required>
+                         <div class="valid-feedback">Password field is valid!</div>
+                         <div class="invalid-feedback">Password field cannot be blank!</div>
+                     </div>
+
+
+
+                      
+                   
+            
+
+                     <div class="col-md-12 mt-3">
+                      <label class="mb-3 mr-1" [(ngModel)]="sexe" 
+                      for="gender">Gender: </label>
+                      
+                      <input type="radio" class="btn-check" name="sexe" id="male" autocomplete="off" required>
+                      <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                      <input type="radio" class="btn-check" name="sexe" id="female" autocomplete="off" required>
+                      <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+                      </div>
+                         <div class="valid-feedback mv-up">You selected a gender!</div>
+                          <div class="invalid-feedback mv-up">Please select a gender!</div>
+              
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label">I confirm that all data are correct</label>
+                   <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                  </div>
+            
+
+                      <div class="form-button mt-3" style="text-align: center">
+                          <button id="submit" [disabled]="loginForm.invalid"  type="submit" class="btn btn-primary">Register</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--div class="col-md-4" style="color:white;">
+  <form  autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <div class="form-group" >
+      <label for="firstName">First name :</label>
+      <input [(ngModel)]="firstName" name="firstName" id="firstName" type="text" class="form-control" placeholder="firstName..." />
+    </div>
+    <div class="form-group" >
+      <label for="lastName">last name :</label>
+      <input [(ngModel)]="lastName" name="lastName" id="lastName" type="text" class="form-control" placeholder="lastName..." />
+    </div>
+    <div class="form-group" >
+      <label for="address">address:</label>
+      <input [(ngModel)]="address" name="address" id="address" type="text" class="form-control" placeholder="address..." />
+    </div>
+    <div class="form-group" >
+      <label for="cin">cin :</label>
+      <input [(ngModel)]="cin" name="cin" id="cin"  type="text" class="form-control" placeholder="cin..." />
+    </div>
+    <div class="form-group" >
+      <label for="password">Password:</label>
+      <input [(ngModel)]="password" name="password" id="password" type="password" class="form-control"placeholder="Password..." />
+    </div-->
+     <!--div class="form-group">
+      <label for="sexe">sexe:</label>
+      <br>
+      <select [(ngModel)]="sexe" name="sexe" id="sexe">
+        <option  selected="yes" value="">--Please choose an option--</option>
+        <option value="male">male</option>
+        <option value="feme">femelle</option>
+      </select>
+     </div>
+
+
+
+  <div style="text-align: center" >
+   <button type="submit" class="btn btn-light">Login</button>
+  </div>
+    
+  </form>
+</div-->

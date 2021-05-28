@@ -1,0 +1,33 @@
+
+<h2 style="color:white;" >Personal information</h2>
+<hr>
+<div class="col-md-4" style="color:white;">
+  <!--<form autocomplete="off" [formGroup]="FormLogin"-->
+  <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <div class="form-group" >
+      <label for="Firstname">First name :</label>
+      <input [(ngModel)]="Firstname" name="Firstname" id="Firstname " type="text" class="form-control" placeholder="User Name..." />
+    </div>
+    <div class="form-group" >
+      <label for="lastname">last name :</label>
+      <input [(ngModel)]="lastname" name="lastname" id="lastname " type="text" class="form-control" placeholder="User Name..." />
+    </div>
+    <div class="form-group" >
+      <label for="adresse">adresse :</label>
+      <input [(ngModel)]="adresse" name="adresse" id="adresse" type="text" class="form-control" placeholder="User Name..." />
+    </div>
+    <div class="form-group" >
+      <label for="cin">cin :</label>
+      <input [(ngModel)]="cin" name="cin" id="cin"  type="text" class="form-control" placeholder="User Name..." />
+    </div>
+    <div class="form-group" >
+      <label for="password">Password:</label>
+      <input [(ngModel)]="password" name="password" id="password" type="password" class="form-control"placeholder="Password..." />
+    </div>
+        
+    <button type="submit" class="btn btn-primary">Login</button>
+    
+  </form>
+</div>
+  
+

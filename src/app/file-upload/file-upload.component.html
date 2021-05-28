@@ -1,0 +1,51 @@
+
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+    <div class="container-fluid">
+
+        <form [formGroup]="uploadForm" >
+          <div *ngIf="currentFile" class="progress">
+            <div
+              class="progress-bar progress-bar-info progress-bar-striped"
+              role="progressbar"
+              attr.aria-valuenow="{{ progress }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: progress + '%' }"
+            >
+              {{ progress }}%
+            </div>
+          </div>
+
+          <mat-form-field style="display: block;margin-left: auto;margin-right: auto;width: 50%;" class="example-full-width">
+            <mat-label>Select Image</mat-label>
+            <ngx-mat-file-input type="file" accept="image/*" placeholder="Select Image" valuePlaceholder="No image file selected"
+             (change)="selectFile($event)"></ngx-mat-file-input>
+            <mat-icon matSuffix>image</mat-icon>
+            <!--<input style="display: block;margin-left: auto;margin-right: auto;width: 100%;"
+            type="file" accept="image/*" (change)="selectFile($event)" />-->
+          </mat-form-field>
+
+          <button class="btn btn-success" style="display: block;margin-left: auto;margin-right: auto;width: 35%;" [disabled]="!selectedFiles" (click)="upload()">
+            Upload
+          </button>
+         <!-- <button type="submit" mat-button color="primary">
+            Done
+          </button>-->
+          <div class="alert alert-light text-center" role="alert" >{{ message }}</div>
+          <div class="card" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+            <div class="card-header">Preview</div>
+              <!-- Image Preview -->
+              <div  class="imagePreview" >
+                <img style="display: block;margin-left: auto;margin-right:auto;width: 100%;"
+                 *ngIf="imageURL && imageURL !== ''" [src]="imageURL" [alt]="uploadForm.value.name">
+              </div>
+          </div>
+
+        </form>
+    </div>
+  </div>
+</div>
